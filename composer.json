@@ -1,0 +1,45 @@
+{
+    "name": "sndpr/fitchen",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Sndpr\\Fitchen\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Baptiste Vadé",
+            "email": "baptiste.vade@hotmail.fr"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/symfony": "^6.1",
+        "symfony/runtime": "*",
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/flex": "^2.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true,
+            "symfony/flex": true
+        }
+    },
+    "require-dev": {
+        "symfony/debug": "^4.4",
+        "symfony/maker-bundle": "^1.45",
+        "symfony/console": "^6.1"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    }
+}

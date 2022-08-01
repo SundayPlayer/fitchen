@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Sndpr\Fitchen\:
+        resource: '../../src/'
+        exclude:
+#            - '../src/DependencyInjection/'
+#            - '../src/Entity/'
+            - '../../src/Infrastructure/Symfony/Kernel.php'
+#            - '../src/Tests/'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    Sndpr\Fitchen\Infrastructure\Symfony\Controller\:
+        resource: '../../src/Infrastructure/Symfony/Controller/'
+        tags: ['controller.service_arguments']
